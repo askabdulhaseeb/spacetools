@@ -38,37 +38,46 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(value: AppProvider()),
       ],
       child: MaterialApp(
-          theme: ThemeData(
-              brightness: Brightness.dark,
-              fontFamily: 'Inter',
-              scaffoldBackgroundColor: Colors.transparent,
-              useMaterial3: true,
-              iconTheme: const IconThemeData(color: Colors.white),
-              elevatedButtonTheme: ElevatedButtonThemeData(
-                  style: ElevatedButton.styleFrom(
-                backgroundColor: kLighterColor,
-                foregroundColor: Colors.white,
-                surfaceTintColor: kGreyColor,
-                elevation: 0,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                side: const BorderSide(width: 0),
-              )),
-              textTheme: const TextTheme(
-                  bodyMedium: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.w400),
-                  bodyLarge: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 24),
-                  labelMedium: TextStyle(
-                      color: kGreyColor,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400))),
-          debugShowCheckedModeBanner: false,
-          home: box.isEmpty
-              ? const LoginScreen1()
-              : MainPage(address: box.get('address'))),
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          brightness: Brightness.dark,
+          fontFamily: 'Inter',
+          scaffoldBackgroundColor: Colors.transparent,
+          useMaterial3: true,
+          iconTheme: const IconThemeData(color: Colors.white),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: kLighterColor,
+              foregroundColor: Colors.white,
+              surfaceTintColor: kGreyColor,
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              side: const BorderSide(width: 0),
+            ),
+          ),
+          textTheme: const TextTheme(
+            bodyMedium: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w400,
+            ),
+            bodyLarge: TextStyle(
+              fontSize: 24,
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+            ),
+            labelMedium: TextStyle(
+              fontSize: 15,
+              color: kGreyColor,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        ),
+        home: box.isEmpty
+            ? const LoginScreen1()
+            : MainPage(address: box.get('address')),
+      ),
     );
   }
 }
